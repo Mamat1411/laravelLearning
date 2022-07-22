@@ -18,7 +18,11 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        "name" => "Muhammad Mujahid",
+        "email" => "muhammadmujahid14@gmail.com",
+        "image" => "img/mamat.png"
+    ]);
 });
 
 Route::get('/posts', function () {

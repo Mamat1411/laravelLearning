@@ -1,12 +1,8 @@
-@extends('layout/main')
+@extends('layout.main')
 @section('title', 'About Page')
 
 @section('container')
-    <div class="container">
-        <div class="column">
-            <div class="row">
-                About Page
-            </div>
-        </div>
-    </div>
+    <h2>{{ $name }}</h1>
+    <h3>{{ $email }}</h3>
+    <img src="{{ $image }}" alt="Mamat" width="200px">
 @endsection
