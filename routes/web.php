@@ -29,7 +29,20 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts', function () {
+    $blog_posts = [
+        [
+            "title" => "First Post Title",
+            "author" => "Mamat",
+            "body" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, non ipsum inventore magnam praesentium autem omnis in, alias vitae perferendis saepe quia quisquam eveniet necessitatibus corrupti. Ipsum sit ex, sed repellat expedita voluptatibus quo labore asperiores perspiciatis natus nesciunt quis, assumenda impedit modi nobis. Dignissimos laudantium rerum distinctio laboriosam quaerat voluptatibus nihil perferendis aperiam assumenda earum incidunt vero corrupti, reiciendis tenetur iusto asperiores ipsa velit ex illum possimus omnis repellendus cum repudiandae ad! Vero omnis vitae deserunt quo excepturi illum?"
+        ],
+        [
+            "title" => "Second Post Title",
+            "author" => "Muhammad",
+            "body" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, non ipsum inventore magnam praesentium autem omnis in, alias vitae perferendis saepe quia quisquam eveniet necessitatibus corrupti. Ipsum sit ex, sed repellat expedita voluptatibus quo labore asperiores perspiciatis natus nesciunt quis, assumenda impedit modi nobis. Dignissimos laudantium rerum distinctio laboriosam quaerat voluptatibus nihil perferendis aperiam assumenda earum incidunt vero corrupti, reiciendis tenetur iusto asperiores ipsa velit ex illum possimus omnis repellendus cum repudiandae ad! Vero omnis vitae deserunt quo excepturi illum?"
+        ]
+    ];
     return view('posts', [
-        "title" => "Posts"
+        "title" => "Posts",
+        "posts" => $blog_posts
     ]);
 });
