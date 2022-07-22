@@ -1,5 +1,4 @@
 @extends('layout.main')
-@section('title', 'About Page')
 
 @section('container')
     <h2>{{ $name }}</h1>
