@@ -30,13 +30,13 @@ class Post
     public static function find($slug)
     {
         $posts = self::$blog_posts;
-        $new_post = [];
-        foreach ($posts as $post) {
-            if ($post["slug"] === $slug) {
-                $new_post = $post;
+        $post = [];
+        foreach ($posts as $p) {
+            if ($p["slug"] === $slug) {
+                $post = $p;
             }
         }
 
-        return $new_post;
+        return $post;
     }
 }
