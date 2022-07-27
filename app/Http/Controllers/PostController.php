@@ -14,7 +14,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return view('posts', [
+            "title" => "Posts",
+            "posts" => Post::all()
+        ]);
     }
 
     /**
@@ -44,9 +47,12 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($slug)
     {
-        //
+        return view('post', [
+            "title" => "Single Post",
+            "post" => Post::find($slug)
+        ]);
     }
 
     /**

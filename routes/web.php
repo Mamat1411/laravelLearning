@@ -29,17 +29,7 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/posts', function () {
-    return view('posts', [
-        "title" => "Posts",
-        "posts" => Post::all()
-    ]);
-});
+Route::get('/posts', 'PostController@index');
 
 //single post page
-Route::get('/posts/{slug}', function ($slug) {
-    return view('post', [
-        "title" => "Single Post",
-        "post" => Post::find($slug)
-    ]);
-});
+Route::get('/posts/{slug}', 'PostController@show');
