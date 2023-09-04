@@ -9,4 +9,8 @@ class Category extends Model
 {
     protected $guarded = ['id'];
     protected $timestamps = false;
+
+    public function posts() : HasMany {
+        return $this->hasMany(Post::class);
+    }
 }
