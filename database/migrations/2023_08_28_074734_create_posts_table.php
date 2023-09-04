@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('title');
             $table->text('excerpt');
+            $table->string('slug', 100);
             $table->text('body');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
