@@ -17,7 +17,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = ['id'];
+    protected $guarded = ['id'];
 
     public function posts() : HasMany {
         return $this->hasMany(Post::class);
