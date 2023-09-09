@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => Crypt::encrypt('Muhammad Mujahid'),
             'email' => Crypt::encrypt('muhammadmujahid14@gmail.com'),
+            'username' => Crypt::encrypt('mamat1411'),
             'password' => bcrypt('mamat1411')
         ]);
 
@@ -31,7 +32,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Category::create([
-            'name' => 'Front-End Programming',
+            'name' => 'Front-End Development',
             'slug' => 'front-end-development'
         ]);
 
