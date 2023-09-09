@@ -37,18 +37,18 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $slug)
+    public function show(Post $post)
     {
-        return view('blog', [
-            "title" => "Posts",
-            "post" => Post::find($slug)
+        return view('post', [
+            "title" => "Single Post",
+            "post" => $post
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Post $id)
     {
         //
     }
@@ -56,7 +56,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Post $id)
     {
         //
     }
@@ -64,7 +64,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Post $id)
     {
         //
     }
