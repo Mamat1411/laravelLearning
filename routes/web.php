@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PostController@index');
 Route::get('/posts/{post:slug}', 'PostController@show');
+
+Route::get('/category/{category:slug}', 'CategoryController@index');
+
+Route::get('/author/{author:username}', 'UserController@index');

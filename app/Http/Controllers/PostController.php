@@ -14,7 +14,7 @@ class PostController extends Controller
     {
         return view('blog', [
             "title" => "Posts",
-            "posts" => Post::latest()->paginate(5)
+            "posts" => Post::latest()->get()
         ]);
     }
 
@@ -40,7 +40,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         return view('post', [
-            "title" => "Single Post",
+            "title" => $post->title,
             "post" => $post
         ]);
     }
