@@ -14,7 +14,7 @@ class PostController extends Controller
     {
         return view('blog', [
             "title" => "Posts",
-            "posts" => Post::paginate(5)
+            "posts" => Post::latest()->paginate(5)
         ]);
     }
 
