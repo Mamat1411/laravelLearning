@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Crypt;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,7 +18,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => bcrypt('Muhammad Mujahid'),
+            'name' => Crypt::encrypt('Muhammad Mujahid'),
             'email' => bcrypt('muhammadmujahid14@gmail.com'),
             'password' => bcrypt('mamat1411')
         ]);
