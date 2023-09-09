@@ -20,7 +20,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => Crypt::encrypt(fake()->name()),
-            'email' => bcrypt(fake()->unique()->safeEmail()),
+            'email' => Crypt::encrypt(fake()->unique()->safeEmail()),
             'password' => bcrypt("12345"),
         ];
     }
