@@ -14,7 +14,4 @@
             </div>
         </div>
     </div>
-    {{-- <article class="mb-4">
-        <h2>{{ $post->title }}</h2>
-    </article> --}}
 @endsection
