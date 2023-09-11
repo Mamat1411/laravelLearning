@@ -27,13 +27,13 @@ class DatabaseSeeder extends Seeder
         User::factory(4)->create();
 
         Category::create([
-            'name' => 'Back-End Development',
-            'slug' => 'back-end-development'
+            'name' => 'Backend Programming',
+            'slug' => 'backend-programming'
         ]);
 
         Category::create([
-            'name' => 'Front-End Development',
-            'slug' => 'front-end-development'
+            'name' => 'Frontend Programming',
+            'slug' => 'frontend-programming'
         ]);
 
         Category::create([

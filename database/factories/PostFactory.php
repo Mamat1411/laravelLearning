@@ -22,7 +22,9 @@ class PostFactory extends Factory
             'user_id' => mt_rand(1,5),
             'slug' => fake()->slug(mt_rand(2,8)),
             'excerpt' => fake()->sentence(mt_rand(2,8), false),
-            'body' => fake()->paragraphs(mt_rand(3,8), true)
+            'body' => collect(fake()->paragraphs(mt_rand(3,8)))
+                        ->map(fn($p) => "<p>$p</p>")
+                        ->implode('')
         ];
     }
 }
