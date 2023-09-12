@@ -23,9 +23,6 @@
         </div>
 
     <div class="container">
-        @else
-            <p class="text-center fs-4">No Post Found</p>
-        @endif
         <div class="row">
             @foreach ($posts->skip(1) as $post)
                 <div class="col-md-4 mb-3">
@@ -49,5 +46,9 @@
                 </div>
             @endforeach
         </div>
+        @else
+            <p class="text-center fs-4">No Post Found</p>
+        @endif
     </div>
+    {{ $posts->links() }}
 @endsection
