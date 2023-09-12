@@ -21,7 +21,7 @@ class PostFactory extends Factory
             'category_id' => mt_rand(1,3),
             'user_id' => mt_rand(1,5),
             'slug' => fake()->slug(mt_rand(2,8)),
-            'excerpt' => fake()->sentence(mt_rand(2,8), false),
+            'excerpt' => fake()->sentence(mt_rand(8,10), false),
             'body' => collect(fake()->paragraphs(mt_rand(3,8)))
                         ->map(fn($p) => "<p>$p</p>")
                         ->implode('')

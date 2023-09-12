@@ -1,7 +1,8 @@
 @extends('layouts.main')
 @section('title', 'Home')
 @section('container')
-    <h2 class="mb-3">Blog Posts Page</h2>
+
+    <h2 class="mb-3 text-center">Blog Posts Page</h2>
     @if ($posts->count())
         <div class="card mb-3">
             <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">
@@ -20,11 +21,11 @@
             <a href="/posts/{{ $posts[0]->slug }}" class="btn btn-primary">Read More...</a>
             </div>
         </div>
-    @else
-        <p class="text-center fs-4">No Post Found</p>
-    @endif
 
     <div class="container">
+        @else
+            <p class="text-center fs-4">No Post Found</p>
+        @endif
         <div class="row">
             @foreach ($posts->skip(1) as $post)
                 <div class="col-md-4 mb-3">
