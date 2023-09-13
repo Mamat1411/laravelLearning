@@ -19,6 +19,6 @@
                 <button class="btn btn-primary" type="submit">Search</button>
             </form>
         </div>
-        <a href="" class="btn btn-warning text-decoration-none ms-2">Login</a>
+        <a href="/login" class="btn btn-warning text-decoration-none ms-2"><i class="bi bi-box-arrow-in-right"></i> Login</a>
     </div>
 </nav>

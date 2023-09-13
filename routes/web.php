@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PostController@index');
 Route::get('/posts/{post:slug}', 'PostController@show');
+
+Route::get('/login', 'LoginController@index');
+
+Route::get('/register', 'RegisterController@index');
