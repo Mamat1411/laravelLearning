@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class RegisterController extends Controller
 {
@@ -12,9 +13,7 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('register.index', [
-            'title' => "Registration Page"
-        ]);
+        //
     }
 
     /**
@@ -22,7 +21,9 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        //
+        return view('register.index', [
+            'title' => "Registration Page"
+        ]);
     }
 
     /**
@@ -30,7 +31,21 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate([
+            'name' => 'required|max:300',
+            'username' => 'required|unique:users|max:300',
+            'email' => 'required|email:dns|unique:users|max:300',
+            'password' => 'required|min:8'
+        ]);
+
+        User::create([
+            'name' => Crypt::encrypt($request['name']),
+            'username' => bcrypt($request['username']),
+            'email' => Crypt::encrypt($request['email']),
+            'password' => bcrypt($request['password'])
+        ]);
+
+        return redirect('/login') -> with('status', 'You\'ve Registered. Please Sign In Now');
     }
 
     /**

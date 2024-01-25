@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PostController@index');
 Route::get('/posts/{post:slug}', 'PostController@show');
 
-Route::get('/login', 'LoginController@index');
+Route::get('/login', 'LoginController@index')->middleware('guest');
+Route::post('/login', 'LoginController@authenticate');
+Route::post('/logout', 'LoginController@logout');
 
-Route::get('/register', 'RegisterController@index');
+Route::get('/register', 'RegisterController@create');
+Route::post('/register', 'RegisterController@store');
