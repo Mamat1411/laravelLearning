@@ -8,7 +8,7 @@
                     @csrf
                     <div class="form-floating">
                         <input type="text" class="form-control rounded-top @error('name') is-invalid @enderror" name="name" id="name"
-                            placeholder="Your Name Here" value="{{ old('name') }}" required>
+                            placeholder="Your Name Here" value="{{ old('name') }}" autofocus required>
                         <label for="name">Name</label>
                         @error('name')
                             <div class="invalid-feedback">
