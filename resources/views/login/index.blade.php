@@ -20,7 +20,7 @@
                 <form action="/login" method="POST">
                     @csrf
                     <div class="form-floating">
-                        <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="Username" value="{{ old('username') }}" autofocus required>
+                        <input type="text" name="username" class="form-control rounded-top @error('username') is-invalid @enderror" id="username" placeholder="Username" value="{{ old('username') }}" autofocus required>
                         <label for="username">Username</label>
                         @error('username')
                             <div class="invalid-feedback">
@@ -28,8 +28,8 @@
                             </div>
                         @enderror
                     </div>
-                    <div class="form-floating">
-                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Password" required>
+                    <div class="form-floating mb-3">
+                        <input type="password" name="password" class="form-control rounded-bottom @error('password') is-invalid @enderror" id="password" placeholder="Password" required>
                         <label for="password">Password</label>
                         @error('password')
                             <div class="invalid-feedback">
