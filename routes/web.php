@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PostController@index');
+Route::get('/', 'PostController@index')->name('homepage');
 Route::get('/posts/{post:slug}', 'PostController@show');
 
 Route::get('/login', 'LoginController@index')->middleware('guest');
@@ -22,3 +22,5 @@ Route::post('/logout', 'LoginController@logout');
 
 Route::get('/register', 'RegisterController@create');
 Route::post('/register', 'RegisterController@store');
+
+Route::get('/dashboard', 'Dashboard\DashboardController@index')->middleware('auth');
