@@ -32,7 +32,7 @@
                                 Welcome {{ decrypt(auth()->user()->name) }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-layout-text-window-reverse"></i>
+                                <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-window-reverse"></i>
                                         My
                                         Dashboard</a></li>
                                 <li>
