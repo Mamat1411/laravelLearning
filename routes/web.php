@@ -23,4 +23,7 @@ Route::post('/logout', 'LoginController@logout');
 Route::get('/register', 'RegisterController@create');
 Route::post('/register', 'RegisterController@store');
 
-Route::get('/dashboard', 'Dashboard\DashboardController@index')->middleware('auth');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', 'Dashboard\DashboardController@index');
+    Route::get('/dashboard/posts/{post:slug}', 'Dashboard\DashboardController@show');
+});
