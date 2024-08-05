@@ -5,7 +5,7 @@
     <h2 class="mb-3 text-center">{{ $title }}</h2>
     @if ($posts->count())
         <div class="card mb-3">
-            <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="card-img-top"
+            <img src="https://picsum.photos/1200/400?{{ $posts[0]->category->name }}" class="card-img-top"
                 alt="{{ $posts[0]->category->name }}">
             <div class="card-body text-center">
                 <h3 class="card-title"><a href="/posts/{{ $posts[0]->slug }}"
@@ -35,7 +35,7 @@
                                 style="background-color: rgba(0, 0, 0, 0.7); border-radius: 5px"><a
                                     href="/?category={{ $post->category->slug }}"
                                     class="text-decoration-none text-white">{{ $post->category->name }}</a></div>
-                            <img src="https://source.unsplash.com/500x400?{{ $post->category->name }}" class="card-img-top"
+                            <img src="https://picsum.photos/500/400?{{ $post->category->name }}" class="card-img-top"
                                 alt="{{ $post->category->name }}">
                             <div class="card-body">
                                 <h5 class="card-title"><a href="/posts/{{ $post->slug }}"
